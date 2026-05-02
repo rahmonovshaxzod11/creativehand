@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hand Vision - Real-time hand tracking with creative visual effects">
+    <title>Hand Vision | Creative Hand Tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div class="start-content">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+            <div class="glow-orb orb-3"></div>
+            <h1 class="main-title">
+                <span class="title-line">HAND</span>
+                <span class="title-line accent">VISION</span>
+            </h1>
+            <p class="subtitle">Qo'lingizni kamera oldiga qo'ying va sehrni ko'ring</p>
+            <button id="start-btn">
+                <span class="btn-text">Boshlash</span>
+                <span class="btn-icon">→</span>
+                <div class="btn-glow"></div>
+            </button>
+            <p id="status-text" class="loader-text" style="margin-top: 16px;">Yuklanmoqda...</p>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <span>Neon effektlar</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <span>Kreativ vizual</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <span>Real-time tracking</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Canvas Area -->
+    <div id="app-container" class="hidden">
+        <video id="webcam" autoplay playsinline muted></video>
+        <canvas id="output-canvas"></canvas>
+        <canvas id="fx-canvas"></canvas>
+
+        <div id="controls">
+            <button id="toggle-mode" class="ctrl-btn" title="Rejimni o'zgartirish"><span>🎨</span></button>
+            <button id="toggle-particles" class="ctrl-btn active" title="Zarrachalar"><span>✨</span></button>
+            <button id="toggle-trails" class="ctrl-btn active" title="Izlar"><span>🌊</span></button>
+            <button id="toggle-geometry" class="ctrl-btn active" title="Geometriya"><span>💎</span></button>
+            <button id="toggle-webcam-view" class="ctrl-btn active" title="Kamerani ko'rsatish"><span>📷</span></button>
+        </div>
+        
+        <div id="mode-indicator"><span id="mode-name">NEON SKELETON</span></div>
+        <div id="fps-counter"><span id="fps-value">0</span> FPS</div>
+        <div id="debug-info"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
